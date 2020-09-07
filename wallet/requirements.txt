@@ -1,0 +1,33 @@
+This file lists the detailed steps to do for installing the dependant software and dependencies
+
+## Dependencies
+
+- PHP must be installed on your operating system (any version, 5 or 7). Don't worry, you will *not* need to know any PHP.
+
+- You will need to clone the [`hd-wallet-derive`](https://github.com/dan-da/hd-wallet-derive) tool.
+
+- [`bit`](https://ofek.github.io/bit/) Python Bitcoin library.
+
+- [`web3.py`](https://github.com/ethereum/web3.py) Python Ethereum library.
+
+## Instructions
+
+### Project setup
+
+- Create a project directory called `wallet` and `cd` into it.
+
+- Clone the `hd-wallet-derive` tool into this folder and install it using the instructions on its `README.md`.
+
+- Create a symlink called `derive` for the `hd-wallet-derive/hd-wallet-derive.php` script into the top level project
+  directory like so: `ln -s hd-wallet-derive/hd-wallet-derive.php derive`
+
+  This will clean up the command needed to run the script in our code, as we can call `./derive`
+  instead of `./hd-wallet-derive/hd-wallet-derive.php`.
+
+- Test that you can run the `./derive` script properly, use one of the examples on the repo's `README.md`
+
+- Create a file called `wallet.py` -- this will be your universal wallet script.
+
+Your directory tree should look something like this:
+
+![directory-tree](Images/tree.png)
