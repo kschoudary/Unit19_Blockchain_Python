@@ -4,7 +4,7 @@
 # Date: September-7th, 2020
 
 # Import Libraries
-import constants from constants.py
+# import constants from constants.py
 import subprocess
 import json
 import os
@@ -13,7 +13,7 @@ import os
 os.chdir(r'C:\Users\kscho\SW')
 
 # Display current directory for verification
-pwd()
+# pwd()
 
 # Define the function - derive_wallets and use JSON Format
 
@@ -27,7 +27,10 @@ def derive_wallets(mnemonic, coin, numderive):
     
     keys = json.loads(output)
     return keys
-    
+
+# Define object coins as Dictionary
+coins = {}
+
 # Set Variables
 #
 mnemonic = "crazy kitten zoo also rack load praise between decrease fringe opinion erosion"
@@ -36,12 +39,13 @@ numderive = 3
 
 # Call the Function with variable for ETH
 coin='eth'
-coins_eth=derive_wallets(mnemonic,coin,numderive)   
-print("ETH Details")
-print(coins_eth)
+coins["eth"] = derive_wallets(mnemonic,coin,numderive) 
 
 # Call the Function with variable for BTC-TEST
+
 coin='btc-test'
-coins_btc_test=derive_wallets(mnemonic,coin,numderive)  
-print("BTC-TEST Details")
-print(coins_btc_test)
+coins["btc-test"] = derive_wallets(mnemonic,coin,numderive) 
+
+# Display the contents of object - coins
+coins
+print(coins)
